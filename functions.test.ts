@@ -96,4 +96,24 @@ describe('Functions Class', () => {
       expect(classInstance.IsLeapYear(196)).toBeTruthy();
     });
   });
+
+  describe('FindNthLargestNumber', () => {
+    it('should throw an exception if a searching index is bigger then array size', () => {
+      try {
+        classInstance.FindNthLargestNumber([1, 3, 2, 5], 9);
+      } catch (e) {
+        expect(e.message).toBe('Invalid index');
+      }
+    });
+
+    it('should return a Nth largest number', () => {
+      const numbers = [17, 1, 15, 29, 40, 55, 100, 11, 3, 44, 18, 12, 42];
+
+      expect(classInstance.FindNthLargestNumber(numbers, 1)).toBe(100);
+      expect(classInstance.FindNthLargestNumber(numbers, 13)).toBe(1);
+      expect(classInstance.FindNthLargestNumber(numbers, 3)).toBe(44);
+      expect(classInstance.FindNthLargestNumber(numbers, 4)).toBe(42);
+      expect(classInstance.FindNthLargestNumber(numbers, 7)).toBe(18);
+    });
+  });
 });

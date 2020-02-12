@@ -81,7 +81,13 @@ export class Functions {
    * @returns The N:th largest number in list.
    */
   public FindNthLargestNumber(numbers: number[], n: number): number {
-    throw new Error();
+    if (n > numbers.length) {
+      throw new Error('Invalid index');
+    }
+
+    // Using another sort algorithm can be an improvement
+    // The solution could be even more complex if we would try not to tske into account duplicates
+    return numbers.sort((a: number, b: number): number => b - a)[n - 1];
   }
 
   /**
