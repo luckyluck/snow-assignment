@@ -23,7 +23,24 @@ export class Functions {
    * @returns The nth fibonacci number.
    */
   public CalculateNthFibonacciNumber(n: number): number {
-    throw new Error();
+    if (n < 0) {
+      throw new Error('n should be greater or equal to 0');
+    }
+
+    // 2 first numbers are special cases - to calculate a next one we need 2 previous
+    if (n < 2) return n;
+    // 2 closest numbers that we have at the beginning
+    const numbers = [0, 1];
+    // 1st element before calculation
+    let nthNumber = 0;
+
+    // We can also use recursion here
+    for (let i = 2; i <= n; i++) {
+      nthNumber = numbers[i - 1] + numbers[i - 2];
+      numbers.push(nthNumber);
+    }
+
+    return nthNumber;
   }
 
   /**
