@@ -74,4 +74,26 @@ describe('Functions Class', () => {
       expect(classInstance.PadNumberWithZeroes(10000)).toBe('10000');
     });
   });
+
+  describe('IsLeapYear', () => {
+    it('should return false if a given year is not a leap year', () => {
+      expect(classInstance.IsLeapYear(2019)).toBeFalsy();
+      expect(classInstance.IsLeapYear(2018)).toBeFalsy();
+      expect(classInstance.IsLeapYear(2001)).toBeFalsy();
+      expect(classInstance.IsLeapYear(1987)).toBeFalsy();
+      expect(classInstance.IsLeapYear(1901)).toBeFalsy();
+      expect(classInstance.IsLeapYear(1581)).toBeFalsy();
+      expect(classInstance.IsLeapYear(101)).toBeFalsy();
+    });
+
+    it('should return true if a given year is a leap year', () => {
+      expect(classInstance.IsLeapYear(2020)).toBeTruthy();
+      expect(classInstance.IsLeapYear(2016)).toBeTruthy();
+      expect(classInstance.IsLeapYear(1980)).toBeTruthy();
+      expect(classInstance.IsLeapYear(400)).toBeTruthy();
+      expect(classInstance.IsLeapYear(1600)).toBeTruthy();
+      expect(classInstance.IsLeapYear(204)).toBeTruthy();
+      expect(classInstance.IsLeapYear(196)).toBeTruthy();
+    });
+  });
 });

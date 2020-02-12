@@ -69,7 +69,8 @@ export class Functions {
    * @returns True if leap year, false if not.
    */
   public IsLeapYear(year: number): boolean {
-    throw new Error();
+    // https://en.wikipedia.org/wiki/Leap_year#Algorithm
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
 
   /**
