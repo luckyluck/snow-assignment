@@ -7,7 +7,13 @@ export class Functions {
    * @returns Reversed string.
    */
   public ReverseString(value: string): string {
-    throw new Error();
+    // It's debatable if I should check the type and validate on null|undefined or not
+    // On the one hand, TypeScript should do it during development
+    // On the other hand, if the method gets an invalid value during its work, it will crash
+    if (typeof value !== 'string') return value; // I can throw and Exception also
+    if (value.length < 2) return value;
+
+    return value.split('').reverse().join('');
   }
 
   /**
