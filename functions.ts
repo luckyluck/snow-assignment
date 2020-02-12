@@ -107,7 +107,9 @@ export class Functions {
    * @returns True if the bit value is a palindrome otherwise false.
    */
   public IsPalindrome(value: number): boolean {
-    throw new Error();
+    // Let's think about only positive numbers here
+    // Also, is one symbol a palindrome?
+    return value.toString() === this.ReverseString(value.toString());
   }
 
   /**

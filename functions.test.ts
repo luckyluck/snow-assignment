@@ -116,4 +116,22 @@ describe('Functions Class', () => {
       expect(classInstance.FindNthLargestNumber(numbers, 7)).toBe(18);
     });
   });
+
+  describe('IsPalindrome', () => {
+    it('should return false if number is not a palindrome', () => {
+      expect(classInstance.IsPalindrome(123)).toBeFalsy();
+      expect(classInstance.IsPalindrome(12322)).toBeFalsy();
+      expect(classInstance.IsPalindrome(7717)).toBeFalsy();
+      expect(classInstance.IsPalindrome(12345432)).toBeFalsy();
+      expect(classInstance.IsPalindrome(12)).toBeFalsy();
+    });
+
+    it('should return true if number is a palindrome', () => {
+      expect(classInstance.IsPalindrome(1)).toBeTruthy();
+      expect(classInstance.IsPalindrome(11)).toBeTruthy();
+      expect(classInstance.IsPalindrome(121)).toBeTruthy();
+      expect(classInstance.IsPalindrome(123454321)).toBeTruthy();
+      expect(classInstance.IsPalindrome(313)).toBeTruthy();
+    });
+  });
 });
