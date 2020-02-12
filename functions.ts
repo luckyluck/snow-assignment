@@ -51,7 +51,15 @@ export class Functions {
    * @returns Zero-padded number.
    */
   public PadNumberWithZeroes(n: number): string {
-    throw new Error();
+    if (n < 0) {
+      throw new Error('n should be positive');
+    }
+    if (n > 99999) {
+      throw new Error('n cannot be bigger then 99999');
+    }
+    // This is how I would implement the method without built-in functionality
+    // (new Array(5).fill(0).join('') + n.toString()).slice(-5);
+    return n.toString().padStart(5, '0');
   }
 
   /**

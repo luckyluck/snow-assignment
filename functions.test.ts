@@ -43,4 +43,35 @@ describe('Functions Class', () => {
       expect(classInstance.CalculateNthFibonacciNumber(100)).toBe(354224848179262000000);
     });
   });
+
+  describe('PadNumberWithZeros', () => {
+    it('should throw an exception if n is negative', () => {
+      try {
+        classInstance.PadNumberWithZeroes(-1);
+      } catch (e) {
+        expect(e.message).toBe('n should be positive');
+      }
+    });
+
+    it('should throw an exception if n is bigger then 99999', () => {
+      try {
+        classInstance.PadNumberWithZeroes(199999);
+      } catch (e) {
+        expect(e.message).toBe('n cannot be bigger then 99999');
+      }
+    });
+
+    it('should pad n properly if n contains less then 5 digits', () => {
+      expect(classInstance.PadNumberWithZeroes(1)).toBe('00001');
+      expect(classInstance.PadNumberWithZeroes(12)).toBe('00012');
+      expect(classInstance.PadNumberWithZeroes(123)).toBe('00123');
+      expect(classInstance.PadNumberWithZeroes(1234)).toBe('01234');
+    });
+
+    it('should not pad n at all if n contains 5 digits', () => {
+      expect(classInstance.PadNumberWithZeroes(12345)).toBe('12345');
+      expect(classInstance.PadNumberWithZeroes(99999)).toBe('99999');
+      expect(classInstance.PadNumberWithZeroes(10000)).toBe('10000');
+    });
+  });
 });
