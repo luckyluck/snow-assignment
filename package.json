@@ -1,0 +1,34 @@
+{
+  "name": "snow-assignment",
+  "version": "1.0.0",
+  "description": "Test assignment with functions implementation.",
+  "main": "funtions.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyluck/snow-assignment.git"
+  },
+  "keywords": [
+    "typescript",
+    "jest",
+    "babel"
+  ],
+  "author": "Alexandr Ketov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luckyluck/snow-assignment/issues"
+  },
+  "homepage": "https://github.com/luckyluck/snow-assignment#readme",
+  "dependencies": {
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0"
+  }
+}
