@@ -97,7 +97,18 @@ export class Functions {
    * @returns Array with only prime numbers.
    */
   public SelectPrimeNumbers(numbers: number[]): number[] {
-    throw new Error();
+    return numbers.filter((n: number): boolean => {
+      let isPrime = true;
+
+      for (let i = 2; i <= n - 1; i++) {
+        if (n % i == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      return isPrime;
+    });
   }
 
   /**

@@ -5,8 +5,11 @@ describe('Functions Class', () => {
 
   describe('ReverseString', () => {
     it('should not reverse invalid value', () => {
+      // @ts-ignore
       expect(classInstance.ReverseString(123)).toBe(123);
+      // @ts-ignore
       expect(classInstance.ReverseString(null)).toBeNull();
+      // @ts-ignore
       expect(classInstance.ReverseString(undefined)).toBeUndefined();
     });
 
@@ -132,6 +135,20 @@ describe('Functions Class', () => {
       expect(classInstance.IsPalindrome(121)).toBeTruthy();
       expect(classInstance.IsPalindrome(123454321)).toBeTruthy();
       expect(classInstance.IsPalindrome(313)).toBeTruthy();
+    });
+  });
+
+  describe('SelectPrimeNumbers', () => {
+    it('should return empty array if an empty array was provided', () => {
+      expect(classInstance.SelectPrimeNumbers([])).toEqual([]);
+    });
+
+    it('should return empty array if a provided array does not contain any prime number', () => {
+      expect(classInstance.SelectPrimeNumbers([6, 9, 15, 25])).toEqual([]);
+    });
+
+    it('should return an array that contains only prime numbers if a provided array contains prime numbers', () => {
+      expect(classInstance.SelectPrimeNumbers([2, 6, 127, 9, 15, 25, 3, 5, 7, 29])).toEqual([2, 127, 3, 5, 7, 29]);
     });
   });
 });
