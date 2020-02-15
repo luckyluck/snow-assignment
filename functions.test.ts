@@ -151,4 +151,16 @@ describe('Functions Class', () => {
       expect(classInstance.SelectPrimeNumbers([2, 6, 127, 9, 15, 25, 3, 5, 7, 29])).toEqual([2, 127, 3, 5, 7, 29]);
     });
   });
+
+  describe('CountSetBits', () => {
+    it('should return a proper number of bits in a given value', () => {
+      expect(classInstance.CountSetBits(0)).toBe(0);
+      expect(classInstance.CountSetBits(1)).toBe(1);
+      expect(classInstance.CountSetBits(6)).toBe(2);
+      expect(classInstance.CountSetBits(105)).toBe(4);
+      expect(classInstance.CountSetBits(1000)).toBe(6);
+      expect(classInstance.CountSetBits(1000000)).toBe(7);
+      expect(classInstance.CountSetBits(1000000000)).toBe(13);
+    });
+  });
 });

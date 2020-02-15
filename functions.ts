@@ -130,6 +130,6 @@ export class Functions {
    * @returns Number of bits in integer value.
    */
   public CountSetBits(value: number): number {
-    throw new Error();
+    return Number(value).toString(2).replace(/0/g, '').length;
   }
 }
